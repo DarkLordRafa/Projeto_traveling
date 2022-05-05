@@ -1,0 +1,1010 @@
+/* Resets */
+*{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	box-sizing: border-box;
+	/* Removendo efeito de click nos links*/
+	-webkit-tap-highlight-color: transparent;
+	}
+	
+html{
+	scroll-behavior: smooth;
+	/* Enfrentei bugs na responsividade do font size por 
+	causa do ajuste automático do Chrome, então retirei */
+	text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	}
+	
+a{
+	text-decoration: none;
+	}
+	
+/* Importando fonte local*/
+@font-face{
+	font-family: "MsMadi";
+	src: local("MsMadi.ttf"), local("MsMadi"), url("MsMadi.ttf") format("truetype");
+	}
+	
+/* Animação do avião */
+@keyframes plane{
+	0% {left: -100px; visibility: visible;}
+	100% {left: 130vw; visibility: hidden;}
+	}
+	
+body{
+	font-family: arial, sans-serif;
+	overflow-x: hidden;
+	background-color: white;
+	}
+	
+#menu{
+	font-family: Arial, Sans-Serif;
+	text-transform: uppercase;
+	font-size: 22px;
+	/* Fixando menu no topo. O fixed será removido em 
+	telas maiores para o menu ficar ao lado da logo*/
+	position: fixed;
+	width: 0%;
+	transition: ease 0.5s;
+	z-index: 98;
+	height: 70%;
+	}
+	
+#MenuButton{
+	/* Aplicando  flex nas divs do botão para parecerem
+	barras */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	width: 50px;
+	margin-left: 5px;
+	margin-top: 5px;
+	background-color:#1434A4;
+	border-radius: 10%;
+	}
+	
+#MenuButton div{
+	height: 4px;
+	width: 30px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	background-color: white;
+	border-radius: 20%;
+	}
+	
+#menu ul{
+	/* Overflow hidden para esconder a lista
+	completamente */
+	overflow: hidden;
+	background-color: #6495ED;
+	/* Uma cor mais clara para o menu
+	background-color: #0096FF;
+	*/
+	/* Prevenindo quebra de linha do texto das opções. 
+	( Por puro perfeccionismo kkkk) */
+	white-space: nowrap;
+	border-radius: 0% 5% 5% 0%;
+	margin-top: 10px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	height: 100%;
+	}
+	
+#menu ul a{
+	/* display block nas tags a para selecionar as opções e
+	para a animação das barras funcionar mesmo se o 
+	usuário não clicar exatamente no item da lista */
+	display: block;
+	color: inherit;
+	}
+	
+#menu ul a li{
+	/* display inline-block nos items da lista para a barra
+	animada ficar do tamanho do texto */
+	display: inline-block;
+	margin-left: 10%;
+	margin-bottom: 20px;
+	}
+	
+#menu ul a:hover{
+	/* Mudando cor do texto quando se passa o mouse */
+	color: white;
+	transition: 0.5s;
+	}
+	
+#menu ul a li div{
+	/* Configurando  e escondendo as barras abaixo do texto */
+	height: 3px;
+	border-radius: 10px;
+	width: 0%;
+	background-color: white;
+	transition: linear 0.2s;
+	}
+	
+#menu a:hover > li div{
+	/* Animando as barras abaixo do texto quando o
+	usuário passar o mouse */
+	width: 100%;
+	}
+
+header{
+	display: flex;
+	height: 110px;
+	position: relative;
+	/* Overflow hidden para não acompanhar o avião
+	quando ele ultrapassar a borda do header */
+	overflow: hidden;
+	/* Borda para testes
+	border: 1px solid black;
+	*/
+	}
+	
+#LogoArea, #menu{
+	flex: 1;
+	}
+	
+#LogoArea{
+	/* Centralizando a logo no header em telas menores */
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	}
+	
+#LogoArea #logo{
+	width: 150px;
+	/* Borda para teste
+	border: 1px solid black;
+	*/
+	}
+	
+#LogoArea #plane{
+	width: 100px;
+	position: absolute;
+	z-index: 99;
+	right: 0vw;
+	animation-name: plane;
+	animation-duration: 3s;
+	/* Pequeno delay na animação para evitar travamentos
+	*/
+	animation-delay: 1s;
+	animation-timing-function: linear;
+	visibility: hidden;
+	}
+	
+#banner{
+	height: 160px;
+	/* Efeito degradê no banner:
+	background-image: linear-gradient( to bottom, white, transparent 30%), url("banner.jpg");
+	*/
+	background-image: url("banner.jpg");
+	background-repeat: no-repeat;
+	/* Fazendo a imagem se ajustar ao tamanho da div */
+	background-size: 100%;
+	}
+	
+#banner h1{
+	font-size: max(4vw, 25px);
+	width: 50%;
+	padding-left: 15px;
+	padding-top: 10px;
+	color: #4169E1;
+	text-shadow: -1px -1px 0px DarkBlue;
+	text-transform: uppercase;
+	}
+
+#BannerMenu{
+	height: 60px;
+	}
+	
+#BannerMenu ul{
+	height: 100%;
+	display: flex;
+	}
+	
+#BannerMenu a{
+	text-transform: uppercase;
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-weight: bold;
+	background-color: #4169E1;
+	/* Bordas opcionais
+	border-right: 1px solid black;
+	border-left: 1 px solid black;
+	*/
+	}
+	
+#BannerMenu a:hover{
+	background-color: #0096FF;
+	}
+	
+#spotlight{
+	width: 100%;
+	margin-top: 20vh;
+	}
+	
+#Container{
+	margin-top: 20vh;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	}
+	
+.ContainerBox{
+	text-align: center;
+	flex: 1;
+	margin-bottom: 20vh;
+	/* Borda de teste 
+	border: 1px solid black;
+	*/
+	}
+	
+.ContainerBox h1{
+	font-family: "MsMadi";
+	color: #0047AB;
+	font-size: max(5vw, 45px);
+	margin-bottom: 10vh;
+	}
+	
+.ContainerBox .ImageArea{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 30px;
+	width: 100%;
+	/* Borda de teste
+	border: 1px solid black;
+	*/
+	}
+	
+.ContainerBox img{
+	width: 100%;
+	}
+	
+.ContainerBox #InlineImages{
+	display: flex;
+	justify-content: center;
+	position: relative;
+	width: 100%;
+	}
+	
+#InlineImages img{
+	height: 120px;
+	width: 33%;
+	flex: 1;
+	}
+	
+#InlineImages:hover img{
+	filter: brightness(50%);
+	}
+	
+.ContainerBox .ImageArea .buy{
+	position: absolute;
+	bottom: 10%;
+	padding: 5px;
+	background-color: #808080;
+	text-decoration: none;
+	color: white;
+	}
+	
+.ContainerBox .buy:hover{
+	background-color: DarkBlue;
+	}
+	
+.description{
+	font-size: max(3vw, 18px);
+	}
+	
+#TopLine{
+	width: 90%;
+	margin: auto;
+	margin-top: 150px;
+	margin-bottom: 100px;
+	height: 2px;
+	background-color: black;
+	}
+	
+#about{
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 150px;
+	}
+	
+#about h1{
+	font-family: "MsMadi";
+	font-size: max(5vw, 50px);
+	color: #0047AB;
+	margin-bottom: 50px;
+	}
+	
+#about h2{
+	font-size: max(3vw, 18px);
+	font-weight: normal;
+	max-width: 80%;
+	margin: auto;
+	}
+	
+#BottomBanner{
+	height: 250px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	background-image: url("bottom_banner.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	/* Borda para testes
+	border: 1px solid black;
+	*/
+	margin-bottom: 150px;
+	}
+	
+#BottomBanner #button{
+	color: white;
+	font-weight: bold;
+	margin-bottom: 30%;
+	top: 50%;
+	font-size: 20px;
+	padding: 2.5vh;
+	text-align: center;
+	background-color: green;
+	border: none;
+	border-radius:7%;
+	border-bottom: 1vw solid black;
+	border-right: 0.8vw solid black;
+	}
+	
+#BottomBanner #button:active{
+	border: none;
+	border-top: 1vw solid black;
+	border-left: 0.8vw solid black;
+	}
+	
+#BottomBanner #button:hover{
+	box-shadow: 0px 0px 6vw 4vw white;
+	}
+	
+#FooterImages{
+	height: 90px;
+	display: flex;
+	}
+	
+#FooterImages img{
+	flex: 1;
+	width: 33%;
+	}
+	
+footer{
+	background-color: #888888;
+	color: white;
+	font-size: 15px;
+	}
+	
+footer a{
+	color: inherit;
+	}
+	
+#TopLinkDiv{
+	text-align: center;
+	padding-top: 20px;
+	}
+	
+#TopLinkDiv a, #FooterBlock3 a{
+	text-decoration: underline;
+	}
+	
+#FooterArea{
+	padding-top: 50px;
+	display: flex;
+	flex-direction: column;
+	}
+	
+#FooterBlock1{
+	margin-bottom: 20px;
+	}
+	
+#FooterBlock1 ul{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+	}
+	
+#FooterBlock1 ul li{
+	margin-left: 15px;
+	margin-bottom: 20px;
+	}
+
+#FooterBlock2{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-bottom: 40px;
+	}
+	
+#FooterBlock2 a img{
+	height: 50px;
+	width: 50px;
+	}
+	
+#FooterBlock3{
+	word-wrap: break-word;
+	text-align: center;
+	}
+	
+#FooterBlock3 a{
+	color: inherit;
+	}
+	
+address{
+	font-style: normal;
+	}
+	
+#CopyrightArea {
+	text-align: center;
+	padding-top: 10vh;
+	padding-bottom: 10vh;
+	}
+	
+#CopyrightArea a{
+	color: gold;
+	text-decoration: underline;
+	}
+	
+	
+/* Media Queries */
+	
+@media (max-width: 320px){
+	#menu{
+		font-size: 18px;
+	}
+	
+	#MenuButton{
+		height: 40px;
+		width: 40px;
+	}
+	
+	#MenuButton div{
+	height: 3px;
+	width: 22px;
+	}
+	
+	#menu ul{
+	margin-top: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	}
+	
+	#menu ul a li{
+	margin-bottom: 15px;
+	}
+	
+	header{
+	height: 100px;
+	}
+	
+	#LogoArea #logo{
+	width: 120px;
+	}
+	
+	#LogoArea #plane{
+	width: 80px;
+	}
+	
+	#banner{
+	height: 140px;
+	}
+	
+	#banner h1{
+	font-size: 20px;
+	width: 50%;
+	padding-left: 12px;
+	padding-top: 8px;
+	}
+	
+	#BannerMenu{
+	height: 45px;
+	}
+	
+	#Container{
+	margin-top: 20px;
+	}
+	
+	.ContainerBox h1{
+	margin-top: 60px;
+	margin-bottom: 20px;
+	font-size: 40px;
+	}
+	
+	.ContainerBox .ImageArea{
+	margin-bottom: 25px;
+	}
+	
+	#InlineImages img{
+	height: 100px;
+	}
+	
+	.ContainerBox .ImageArea .buy{
+	font-size: 16px;
+	}
+	
+	.description{
+	font-size: 14px;
+	}
+	
+	#TopLine{
+	margin-top: 100px;
+	margin-bottom: 80px;
+	}
+	
+	#about{
+	margin-top: 30px;
+	margin-bottom: 100px;
+	}
+	
+	#about h1{
+	font-size: 40px;
+	margin-bottom: 40px;
+	}
+	
+	#about h2{
+	font-size: 14px;
+	}
+	
+	#BottomBanner{
+	height: 200px;
+	margin-bottom: 100px;
+	}
+	
+	#BottomBanner #button{
+	font-size: 18px;
+	height: 50px;
+	width: 120px;
+	}
+	
+	#FooterImages{
+	height: 70px;
+	}
+	
+	footer{
+	min-height: 300px;
+	font-size: 14px;
+	}
+	
+	#FooterArea{
+	padding-top: 40px;
+	}
+	
+	#FooterBlock1 ul li{
+	margin-left: 10px;
+	margin-bottom: 15px;
+	}
+	
+	#FooterBlock2{
+	margin-bottom: 30px;
+	}
+	
+	#FooterBlock2 img{
+	height: 35px;
+	width: 35px;
+	}
+	
+}
+	
+
+@media (min-width: 481px) and (max-width: 800px){
+	#menu{
+	font-size: 45px;
+	}
+	
+	#MenuButton{
+	height: 80px;
+	width: 80px;
+	margin-left: 10px;
+	margin-top: 10px;
+	}
+	
+	#MenuButton div{
+	height: 5px;
+	width: 40px;
+	}
+	
+	#menu ul{
+	margin-top: 30px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	}
+	
+	#menu ul a li{
+	margin-bottom: 30px;
+	}
+	
+	header{
+	height: 200px;
+	}
+	
+	#LogoArea #logo{
+	width: 220px;
+	}
+	
+	#LogoArea #plane{
+	width: 150px;
+	}
+	
+	#banner{
+	height: 300px;
+	}
+	
+	#banner h1{
+	font-size: 50px;
+	padding-left: 25px;
+	padding-top: 20px;
+	}
+	
+	#BannerMenu{
+	height: 120px;
+	font-size: 35px;
+	}
+	
+	.ContainerBox h1{
+	font-size: 80px;
+	}
+	
+	.ContainerBox .ImageArea{
+	margin-bottom: 40px;
+	}
+	
+	#InlineImages img{
+	height: 180px;
+	}
+	
+	.ContainerBox .ImageArea .buy{
+	font-size: 40px;
+	}
+	
+	.description{
+	font-size: 30px;
+	}
+	
+	#TopLine{
+	margin-top: 170px;
+	margin-bottom: 120px;
+	}
+	
+	#about{
+	margin-top: 60px;
+	margin-bottom: 190px;
+	}
+	
+	#about h1{
+	font-size: 80px;
+	margin-bottom: 70px;
+	}
+	
+	#about h2{
+	font-size: 30px;
+	}
+	
+	#BottomBanner{
+	height: 350px;
+	margin-bottom: 170px;
+	}
+	
+	#BottomBanner #button{
+	font-size: 35px;
+	height: 100px;
+	width: 170px;
+	}
+	
+	#FooterImages{
+	height: 150px;
+	}
+	
+	footer{
+	min-height: 450px;
+	font-size: 25px;
+	}
+	
+	TopLinkDiv{
+	padding-top: 40px;
+	}
+	
+	#FooterArea{
+	padding-top: 60px;
+	}
+	
+	#FooterBlock1 ul li{
+	margin-left: 10px;
+	margin-bottom: 30px;
+	}
+	
+	#FooterBlock2{
+	margin-bottom: 50px;
+	}
+	
+	#FooterBlock2 img{
+	height: 80px;
+	width: 80px;
+	}
+	
+}
+
+
+	
+	/* Desfazendo layout mobile e fazendo o de desktop */
+	
+@media (min-width: 801px){
+	#MenuButton{
+	display: none;
+	}
+	
+	.ImageArea img:hover{
+	filter: brightness(50%);
+	}
+	
+	#LogoArea{
+	display: flex;
+	justify-content: flex-start;
+	}
+	
+	#LogoArea, #menu{
+	height: 100%;
+	}
+	
+	#LogoArea{
+	flex: 0;
+	}
+	
+	#menu{
+	flex: 1;
+	font-size: 1.8vw;
+	position: static;
+	width: 80%;
+	transition: none;
+	z-index: 1;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	}
+	
+	#menu ul{
+	display: flex;
+	width: 100%;
+	height: auto;
+	justify-content: space-evenly;
+	overflow: visible;
+	background-color: inherit;
+	border-radius: 0px;
+	margin-top: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	}
+	
+	#menu ul a{
+	display: inline;
+	color: black;
+	}
+	
+	#menu ul a li{
+	display: inline-block;
+	}
+	
+	#menu ul a:hover{
+	color: #6495ED;
+	transition: 0.1s;
+	}
+	
+	#menu ul a li div{
+	width: 0%;
+	background-color: #6495ED;
+	transition: linear 0.2s;
+	}
+	
+	#banner h1{
+	font-size: 5.2vw;
+	}
+	
+	#banner, #BottomBanner{
+	background-size: cover;
+	background-position: center center;
+	}
+	
+	#BannerMenu{
+	font-size: 3.5vw;
+	}
+	
+	#spotlight{
+	margin-top: 40vh;
+	margin-bottom: 50vh;
+	}
+	
+	#spotlight h1{
+	font-size: 9vw;
+	}
+	
+	#Container{
+	justify-content: space-around;
+	flex-direction: row;
+	}
+	
+	.ContainerBox{
+	flex: 1;
+	width: 40vw;
+	}
+	
+	/* Altura definida para o título e a imagem pararem de
+	se ajustar com o flex do container pai */
+	.ContainerBox h1{
+	height: 25vh;
+	font-size: 7vw;
+	}
+	
+	.ContainerBox .ImageArea img{
+	height: 35vh;
+	}
+	
+	.ContainerBox .ImageArea .buy{
+	font-size: 2.5vw;
+	}
+	
+	.description{
+	font-size: 4vw;
+	}
+	
+	#about h1{
+	font-size: 7vw;
+	}
+	
+	#about h2{
+	font-size: 3vw;
+	}
+	
+	#BottomBanner #button{
+	font-size: 4vw;
+	}
+	
+	footer{
+	font-size: 2.5vw;
+	}
+	
+	#FooterArea{
+	flex-direction: row;
+	}
+	
+	#FooterBlock1, #FooterBlock2, #FooterBlock3{
+	flex: 1;
+	}
+	
+	#FooterBlock1{
+	margin-bottom: 0px;
+	}
+	
+	#FooterBlock1 ul{
+	display: block;
+	/*
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;*/
+	}
+	
+	#FooterBlock1 ul li{
+	margin-left: 0px;
+	margin-bottom: 2vh;
+	}
+
+	#FooterBlock2{
+	flex-direction: column;
+	justify-content: center;
+	margin-bottom: 0px;
+	}
+	
+	#FooterBlock2 img{
+	margin-bottom: 2vh;
+	}
+	
+	header{
+	height: 30vh;
+	}
+	
+	#LogoArea #logo{
+	width: 20vw;
+	}
+	
+	#LogoArea #plane{
+	width: 15vw;
+	}
+	
+	#banner{
+	height: 40vh;
+	}
+	
+	#BannerMenu{
+	height: 20vh;
+	}
+	
+	.ContainerBox h1{
+	height: 30vh;
+	}
+	
+	.ContainerBox .ImageArea{
+	margin-bottom: 10vh;
+	}
+	
+	.ContainerBox .ImageArea img{
+	height: 40vh;
+	}
+	
+	#InlineImages img{
+	height: 45vh;
+	}
+	
+	#TopLine{
+	margin-top: 30vh;
+	margin-bottom: 20vh;
+	}
+	
+	#about{
+	margin-top: 0px;
+	margin-bottom: 20vh;
+	}
+	
+	#about h1{
+	margin-bottom: 20vh;
+	}
+	
+	#BottomBanner{
+	height: 60vh;
+	margin-bottom: 20vh;
+	}
+	
+	#BottomBanner #button{
+	padding: 4vh;
+	}
+	
+	#BottomBanner #button{
+	border-bottom: 0.4vw solid black;
+	border-right: 0.2vw solid black;
+	}
+	
+#BottomBanner #button:active{
+	border: none;
+	border-top: 0.4vw solid black;
+	border-left: 0.2vw solid black;
+	}
+	
+#BottomBanner #button:hover{
+	box-shadow: 0px 0px 4vw 2vw white;
+	}
+	
+	#FooterImages{
+	height: 30vh;
+	}
+	
+	#TopLinkDiv{
+	padding-top: 5vh;
+	padding-bottom: 10vh;
+	}
+	
+	#FooterArea{
+	padding-top: 0px;
+	}
+	
+	#FooterBlock2 a img{
+	height: 10vh;
+	width: auto;
+	}
+	
+}
+
+
+
+
+
+

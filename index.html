@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+	<head>
+		<title>Projeto Agência de Viagens</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content=
+		"width=device-width, initial-scale=1, user-scalable='no'">
+		<meta name="google-site-verification" content="2x8xivTquKHZuGV3KcrU3AyVFbkomnZT5UZxRN-YH-M"/>
+		<meta property="og:url" content="https://darklordrafa.github.io/Exercicios-HTML/Project1">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://darklordrafa.github.io/Exercicios-HTML/Project1/assets/imagens/thumb.png">
+		<meta property="og:title" content="Projeto Traveling Agência de Viagens">
+		<meta property="og:description" content="Site responsivo feito com HTML5, CSS3 e JS puros">
+		<link rel="icon" href="assets/imagens/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href=
+		"assets/css/index.css">
+	</head>
+	<body>
+	
+	<script>
+		window.onload = function(open_close){
+			document.querySelector("#MenuButton").addEventListener("click", function(open_close){
+			if (document.querySelector("#Menu").style.width == '60%'){
+				document.querySelector("#Menu").style.width = '0%';
+				}
+			else {
+				document.querySelector("#Menu").style.width = '60%';
+						}
+					});
+				};
+	</script>
+	
+	<header>
+		<div id="LogoArea">
+			<a href="https://darklordrafa.github.io/Exercicios-HTML/Project1/index.html"><img id="logo" src="assets/imagens/logo.png"></a>
+			<img id="plane" src="assets/imagens/plane1.png">
+		</div>
+		<div id="menu">
+			<div id="MenuButton">
+				<!-- Divs para fazer as barras do botão. -->
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<ul>
+				<a href="https://darklordrafa.github.io/Exercicios-HTML/Project1/index.html">
+					<li>
+						Início
+						<!-- Divs para fazer as barras abaixo das opções 
+								que serão animadas -->
+						<div></div>
+					</li>
+				</a>
+				<a>
+					<li>
+						Passagens
+						<div></div>
+					</li>
+				</a>
+				<a>
+					<li>
+						Horários
+						<div></div>
+					</li>
+				</a>
+				<a>
+					<li>
+						Planos
+						<div></div>
+					</li>
+				</a>
+				<a>
+					<li>
+						Consultoria
+						<div></div>
+					</li>
+				</a>
+				<a>
+					<li>
+						Carrinho
+						<div></div>
+					</li>
+				</a>
+				<a>
+					<li>
+						Encontre-nos
+						<div></div>
+					</li>
+				</a>
+			</ul>
+		</div>
+	</header>
+	
+	<div id="banner">
+		<h1>Nossa Prioridade sempre será você</h1>
+	</div>
+	
+	<div id="BannerMenu">
+			<ul>
+				<a>
+					<li>Notícias</li>
+				</a>
+				<a>
+					<li>Reservar<br>Passagem</li>
+				</a>
+				<a>
+					<li>Voos</li>
+				</a>
+			</ul>
+	</div>
+	
+	<section>
+	<main>
+	<div class="ContainerBox" id="spotlight">
+		<div class="ImageArea">
+			<h1>Conheça um mundo incrível</h1>
+			<div id="InlineImages">
+			<img src="assets/imagens/Container1_image1.jpg">
+			<img src="assets/imagens/Container1_image2.jpg">
+			<img src="assets/imagens/Container1_image3.jpg">
+			<a class="buy">Comprar Passagem</a>
+			</div>
+		</div>
+			<div class="description">
+				Lorem Ipsum is simply dummy text of the printing 
+				and typesetting industry. Lorem Ipsum has been 
+				the industry's standard dummy text ever since the 
+				1500s, when an unknown printer took a galley of 
+				type and scrambled it to make a type specimen 
+				book.
+			</div>
+		</div>
+	</main>
+	</section>
+	
+	<div id ="Container">
+	<section>
+		<div class="ContainerBox">
+			<div class="ImageArea">
+			<h1>Prezamos por sua segurança</h1>
+			<img src="assets/imagens/Container2_image.jpg">
+			<a class="buy">Comprar Passagem</a>
+			</div>
+			<div class="description">
+				Lorem Ipsum is simply dummy text of the printing 
+				and typesetting industry. Lorem Ipsum has been 
+				the industry's standard dummy text ever since the.
+			</div>
+		</div>
+		</section>
+			
+		<section>
+		<div class="ContainerBox">
+			<div class="ImageArea">
+			<h1>Uma equipe de primeira</h1>
+			<img src="assets/imagens/Container3_image.jpg">
+			<a class="buy">Comprar Passagem</a>
+			</div>
+			<div class="description">
+				Lorem Ipsum is simply dummy text of the printing 
+				and typesetting industry. Lorem Ipsum has been 
+				the industry's standard dummy text ever since the 
+				1500s, when an unknown printer took a galley of 
+				type and scrambled it to make a type specimen 
+				book.
+			</div>
+		</div>
+		</section>
+		
+
+		<section>
+		<div class="ContainerBox">
+			<div class="ImageArea">
+			<h1>Viaje com conforto</h1>
+			<img src="assets/imagens/Container4_image.jpg">
+			<a class="buy">Comprar Passagem</a>
+			</div>
+			<div class="description">
+				Lorem Ipsum is simply dummy text of the printing 
+				and typesetting industry. Lorem Ipsum has been 
+				the industry's standard dummy text ever since the 
+				1500s, when an unknown printer took a galley of 
+				type and scrambled it to make a type specimen 
+				book.
+				Lorem Ipsum is simply dummy text of the printing 
+				and typesetting industry. Lorem Ipsum has been 
+				the industry's standard dummy text ever since.
+			</div>
+		</div>
+		</section>
+		
+		<section>
+		<div class="ContainerBox">
+			<div class="ImageArea">
+			<h1>Reserve a janela</h1>
+			<img src="assets/imagens/Container5_image.jpg">
+			<a class="buy">Comprar Passagem</a>
+			</div>
+			<div class="description">
+				Lorem Ipsum is simply dummy text of the printing 
+				and typesetting industry. Lorem Ipsum has been 
+				the industry's standard dummy text ever since the 
+				1500s, when an unknown printer took a galley of 
+				type and scrambled it to make a type specimen 
+				book.
+			</div>
+		</div>
+		</section>
+		</div>
+	
+	<div id="TopLine"></div>
+	<section id="about">
+		<h1>Sobre nós</h1>
+		<strong>
+			<h2>
+				Lorem ipsum dolor sit amet, consectetur 
+				adipiscing elit. Phasellus mattis orci ac neque 
+				consequat, sed elementum urna tempor. Nullam 
+				vestibulum eu est sed aliquam. Donec efficitur, 
+				erat eu interdum congue, neque ex gravida felis, 
+				vel aliquet ipsum lacus a dui. Cras porttitor tortor 
+				quis odio finibus, at gravida turpis aliquet. Nullam
+				 gravida accumsan ipsum quis scelerisque. 
+				Pellentesque finibus porta eros id egestas. 
+				Vestibulum rhoncus sodales porta. Nullam 
+				vulputate ligula nisi, eu sagittis risus tincidunt at. 
+				Integer congue, massa eu tincidunt molestie, 
+				magna turpis luctus felis, sit amet posuere elit nisl 
+				nec diam. Praesent tempor porttitor magna, id 
+				pulvinar magna iaculis non. Pellentesque quis 
+				dictum velit, nec condimentum dolor.
+			</h2>
+		</strong>
+	</section>
+	
+	<div id="BottomBanner">
+	<a>
+		<button id="button">VIAJAR</button>
+	</a>
+	</div>
+	
+	<div id="FooterImages">
+		<img src="assets/imagens/footer_image1.jpg">
+		<img src="assets/imagens/footer_image2.jpg">
+		<img src="assets/imagens/footer_image3.jpg">
+	</div>
+	
+	<footer>
+		<div id="TopLinkDiv">
+		<a id="TopLink" href="#">Ir para o início</a>
+		</div>
+		<div id="FooterArea">
+			<div id="FooterBlock1">
+				<ul>
+					<li>
+						<a>Ajuda</a>
+					</li>
+					<li>
+						<a>Suporte</a>
+					</li>
+					<li>
+						<a>Informações legais</a>
+					</li>
+					<li>
+						<a>Investimento</a>
+					</li>
+				</ul>
+			</div>
+			<div id="FooterBlock2">
+				<a href="https://facebook.com/Rafathefroster">
+					<img src="assets/imagens/f3.png">
+				</a>
+				<a href="https://instagram.com/darklordrafa">
+					<img src="assets/imagens/i3.png">
+				</a>
+				<a href="https://wa.me/5581997015826">
+					<img src="assets/imagens/w3.png">
+				</a>
+				<a>
+					<img src="assets/imagens/y3.png">
+				</a>
+			</div>
+			<div id="FooterBlock3">
+				Traveling Agência de Viagens
+				<br>
+				<address>
+				<a href="https://maps.app.goo.gl/vokyUEcQuA6A9QRj8">
+					Rua Apollo 11 - Varginha, Brasil
+				</a>
+				<br>
+				<br>
+				Email: <a>travelingagencia@gmail.com</a>
+				<br>
+				<br>
+				Telefone: <a>00000000000</a>
+				</address>
+			</div>
+		</div>
+		<div id="CopyrightArea">
+			© Todos os direitos reservados
+			<br>
+			Site desenvolvido por <a href="https://facebook.com/Rafathefroster">Rafael</a>
+		</div>
+	</footer>
+	
+	
+	
+	
+	
+	
+	
+	
+	</body>
+</html>
